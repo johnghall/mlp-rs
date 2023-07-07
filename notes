@@ -1,0 +1,59 @@
+multilayer perceptron based on 3Blue1Brown neural net series
+
+
+
+#### CHAPTER 1 ####
+
+structure:
+784 input
+16 2nd
+16 3rd
+10 last
+
+sig(w1a1 + w2a2 + ... + wnan + b)
+w = weight between previous layer neuron and current neuron
+a = current activation
+sig = activation function (doesn't have to be sig)
+b = bias
+
+0 <= a <= 1
+sigmoidi, relu
+
+neuron is a function - the entire network is a function
+
+
+
+#### CHAPTER 2 ####
+
+to start, initialize all weights and biases for network randomly
+
+cost function
+compare values of output layer to expected values
+add squares of differences 
+
+e.g.
+
+actual | expected
+0.43      0
+0.28      0
+0.19      0
+0.88      1
+0.72      0
+0.01      0
+
+c = (a1-e1)^2 + ... + (an-en)^2
+c = .43^2 + .28^2 + .19^2 + (-0.12)^2 + .72^2 + 0.01^2
+
+cost function takes all weights/biases as input and outputs 1 number, the cost
+
+gradient = the direction of steepest increase
+-gradient = the direction of steepest decrease
+
+compute grad(C), take a step "downhill", repeat
+
+
+
+#### CHAPTER 3 - BACKPROPOGATION ####
+
+single example
+3 ways to increase activation value for neuron - increase bias, increase weight, change activation in previous layer
